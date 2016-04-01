@@ -1,3 +1,5 @@
+inherit kernel-resin
+
 FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
 
 SRC_URI_append = " \
@@ -5,4 +7,8 @@ SRC_URI_append = " \
     file://0002-use-gcc-inline-version.patch \
     "
 
-inherit kernel-resin
+# have the USB display link framebuffer driver built-in the kernel for the Samsung Artik 10 board
+RESIN_CONFIGS_append_artik10 = " udlfb"
+RESIN_CONFIGS[udlfb] = " \
+    CONFIG_FB_UDL=y \
+    "
