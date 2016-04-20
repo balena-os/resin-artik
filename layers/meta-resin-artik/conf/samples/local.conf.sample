@@ -32,6 +32,9 @@ DISTRO ?= "resin-systemd"
 # http://www.yoctoproject.org/docs/latest/mega-manual/mega-manual.html#ref-classes-rm-work
 #INHERIT += "rm_work"
 
+# have build information available on the target under /etc/build
+INHERIT += "image-buildinfo"
+
 # Package Management configuration
 PACKAGE_CLASSES ?= "package_rpm"
 

@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Add build information in the target rootfs [Florin]
+
 # v1.1.3 - 2016-04-14
 
 * Add oe-meta-go to submodules and BBLAYERS [Andrei]
