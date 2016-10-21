@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update meta-resin to v1.17 [Michal]
+
 # v1.16.1 - 2016-10-01
 
 * Update meta-resin to include supervisor v2.5.0 [Pablo]
