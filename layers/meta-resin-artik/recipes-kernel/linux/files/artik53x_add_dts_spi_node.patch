@@ -1,0 +1,39 @@
+From 797ceae96b837b8612ad41749d6398ba40c539b0 Mon Sep 17 00:00:00 2001
+From: Vicentiu Galanopulo <vicentiu@balena.io>
+Date: Mon, 26 Nov 2018 16:33:50 +0100
+Subject: [PATCH] eagleye_530s_add_dts_spi_node
+
+Signed-off-by: Vicentiu Galanopulo <vicentiu@resin.io>
+
+Upstream-Status: Inappropriate [configuration] 
+
+---
+ arch/arm/boot/dts/s5p4418-artik533-compy.dts | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/arch/arm/boot/dts/s5p4418-artik533-compy.dts b/arch/arm/boot/dts/s5p4418-artik533-compy.dts
+index 2b342df..df06f68 100644
+--- a/arch/arm/boot/dts/s5p4418-artik533-compy.dts
++++ b/arch/arm/boot/dts/s5p4418-artik533-compy.dts
+@@ -504,6 +504,18 @@
+ 	pinctrl-0 = <&serial1_pin>, <&serial1_flow_cts>, <&serial1_flow_rts>;
+ };
+ 
++&spi2 {
++	status = "okay";
++	spidev@0 {
++		compatible = "linux,spidev";
++		reg = <0>;
++		spi-max-frequency = <20000000>;
++		controller-data {
++			samsung,spi-feedback-delay = <0>;
++		};
++	};
++};
++
+ &dp_drm {
+ 	status = "okay";
+ 	ports {
+-- 
+2.7.4
+
